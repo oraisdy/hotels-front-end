@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  
+  .ui.fluid.icon.input
+    input(type='text', placeholder='输入要搜索的酒店名称')
+    i.search.icon
+  br
+  .ui.divided.items
+    .item
+      .image
+        img(src='https://semantic-ui.com/images/wireframe/image.png')
+      .content
+        a.header 12 Years a Slave
+        .meta
+          span.cinema Union Square 14
+        .description
+          p
+        .extra
+          .ui.label IMAX
+          .ui.label
+            i.globe.icon
+            |  Additional Languages
+    .item
+      .image
+        img(src='https://semantic-ui.com/images/wireframe/image.png')
+      .content
+        a.header My Neighbor Totoro
+        .meta
+          span.cinema IFC Cinema
+        .description
+          p
+        .extra
+          .ui.right.floated.primary.button
+            | Buy tickets
+            i.right.chevron.icon
+          .ui.label Limited
+    .item
+      .image
+        img(src='https://semantic-ui.com/images/wireframe/image.png')
+      .content
+        a.header Watchmen
+        .meta
+          span.cinema IFC
+        .description
+          p
+        .extra
+          .ui.right.floated.primary.button
+            | Buy tickets
+            i.right.chevron.icon
+
+  
