@@ -3,9 +3,12 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  // res.send('respond with a resource');
+  
+  var list = JSON.parse('[{ "name":"John", "description":"Hello world", "distance":30, "city":"New York"},{ "name":"John", "description":"Hello world", "distance":30, "city":"New York"},{ "name":"John", "description":"Hello world", "distance":30, "city":"New York"}]');
+
   res.render('list', {
-    title: 'list'
+    title: 'list',
+    list: list,
   });
 });
 

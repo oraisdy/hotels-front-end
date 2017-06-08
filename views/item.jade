@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+  
+
+    h1.ui.header #{item.name}
+
+    h3.ui.header
+        i.browser.icon
+        .content 基本信息
+         
+    .meta
+        span.cinema= item.city
+    .description
+        p= item.description
+    
+    h3.ui.header
+        i.plug.icon
+        .content 酒店设施
+
+    .ui.label 空调
+    .ui.label
+        i.globe.icon
+        |  WI-FI
+    .ui.label Limited
+
+
+    h3.ui.header
+        i.ticket.icon
+        .content 平台比价
+    
+     .ui.right.floated.primary.button
+        | Buy tickets
+        i.right.chevron.icon

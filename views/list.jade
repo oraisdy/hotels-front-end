@@ -9,46 +9,52 @@ block content
     i.search.icon
   br
   .ui.divided.items
-    .item
-      .image
-        img(src='https://semantic-ui.com/images/wireframe/image.png')
-      .content
-        a.header 12 Years a Slave
-        .meta
-          span.cinema Union Square 14
-        .description
-          p
-        .extra
-          .ui.label IMAX
-          .ui.label
-            i.globe.icon
-            |  Additional Languages
-    .item
-      .image
-        img(src='https://semantic-ui.com/images/wireframe/image.png')
-      .content
-        a.header My Neighbor Totoro
-        .meta
-          span.cinema IFC Cinema
-        .description
-          p
-        .extra
-          .ui.right.floated.primary.button
-            | Buy tickets
-            i.right.chevron.icon
-          .ui.label Limited
-    .item
-      .image
-        img(src='https://semantic-ui.com/images/wireframe/image.png')
-      .content
-        a.header Watchmen
-        .meta
-          span.cinema IFC
-        .description
-          p
-        .extra
-          .ui.right.floated.primary.button
-            | Buy tickets
-            i.right.chevron.icon
+    each item in list
+      .item
+        .image
+          img(src='https://semantic-ui.com/images/wireframe/image.png')
+        .content
+          a.header(href="/item/1") #{item.name}
+          .meta
+            span.cinema= item.city
+          .description
+            p= item.description
+          .extra
+            .ui.label 空调
+            .ui.label
+              i.globe.icon
+              |  WI-FI
+            .ui.right.floated.primary.button
+              | Buy tickets
+              i.right.chevron.icon
+            .ui.label Limited
+
+    //- .item
+    //-   .image
+    //-     img(src='https://semantic-ui.com/images/wireframe/image.png')
+    //-   .content
+    //-     a.header My Neighbor Totoro
+    //-     .meta
+    //-       span.cinema IFC Cinema
+    //-     .description
+    //-       p
+    //-     .extra
+    //-       .ui.right.floated.primary.button
+    //-         | Buy tickets
+    //-         i.right.chevron.icon
+    //-       .ui.label Limited
+    //- .item
+    //-   .image
+    //-     img(src='https://semantic-ui.com/images/wireframe/image.png')
+    //-   .content
+    //-     a.header Watchmen
+    //-     .meta
+    //-       span.cinema IFC
+    //-     .description
+    //-       p
+    //-     .extra
+    //-       .ui.right.floated.primary.button
+    //-         | Buy tickets
+    //-         i.right.chevron.icon
 
   
