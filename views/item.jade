@@ -1,36 +1,54 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
-  
-
     h1.ui.header #{item.name}
 
     h3.ui.header
         i.browser.icon
-        .content 基本信息
+        .content 酒店信息
          
-    .meta
-        span.cinema= item.city
-    .description
-        p= item.description
     
-    h3.ui.header
-        i.plug.icon
-        .content 酒店设施
-
-    .ui.label 空调
-    .ui.label
-        i.globe.icon
-        |  WI-FI
-    .ui.label Limited
+    .ui.divided.items
+      .item
+        .image
+          img(src=item.img)
+        .content
+          a.header(href="/item/#{item.id}") #{item.name}
+          .meta
+            span.cinema= item.location
+          .description
+            //- .ui.star.rating(data-rating=3)
+            
+            p
+              i.star.icon.yellow
+              i.star.icon.yellow
+              i.star.icon.yellow
+              i.star.icon.yellow
+              #{item.score}
+          .extra
+            .ui.label #{item.type}
+            .ui.right.floated.primary.button
+              |  美团
+              i.right.chevron.icon
+            .ui.right.floated.primary.button
+              |  去哪儿
+              i.right.chevron.icon
 
 
     h3.ui.header
         i.ticket.icon
-        .content 平台比价
+        .content 美团房源
+
+    .ui.relaxed.divided.list
+        each room in rooms
+          .item
+            .right.floated.content
+                .ui.button ￥#{room.price}
+            i.large.hotel.middle.aligned.icon.grey
+            .content
+                a.header= room.roomtype
+                .description(style="margin:8px 0") #{room.description}
+                each service in room.roomservice
+                    .ui.label= service
+               
     
-     .ui.right.floated.primary.button
-        | Buy tickets
-        i.right.chevron.icon

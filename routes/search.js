@@ -1,22 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var dao = require('../dao/HotelDao')
+var hotelDao = require('../dao/HotelDao')
 
 
-router.get('/', function (req, res, next) {
-
-  
-  dao.queryAll(function (data) {
+router.get('/:kw', function (req, res, next) {
+  hotelDao.search(req.params.kw, function (data) {
     res.render('list', {
       title: '酒店列表',
       list: data,
     });
   });
 
- 
 
 });
-
-router.get('/keyword')
 
 module.exports = router;
