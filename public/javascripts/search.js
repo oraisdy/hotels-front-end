@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     $input.keydown(function (event) {
         if (event.which == 13) {
-            window.location = '/keyword/' + $input.val();
+            window.location = '/keyword/' + $input.val() +"/1";
         }
     });
 });

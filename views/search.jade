@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  h1= title
+  //- p Welcome to #{title}
+  
+  .ui.fluid.icon.input
+    input.inputBar(type='text', placeholder='输入要搜索的酒店名称（按下回车查询）')
+    i.search.icon
+  br
+  .ui.divided.items
+    each item in list
+      .item
+        .image
+          img(src=item.img)
+        .content
+          a.header(href="/item/#{item.id}") #{item.name}
+          .meta
+            span.cinema= item.location
+          .description
+            //- .ui.star.rating(data-rating=3)
+            
+            p
+              - for (var i = 1; i < item.score; ++i)
+                i.star.icon.yellow
+              i.star.half.empty.icon.yellow        
+              #{item.score}
+          .extra
+            .ui.label #{item.type}
+            a.ui.right.floated.primary.button(href="/item/#{item.id}")
+              |  查看
+              i.right.chevron.icon
+  .ui.right.floated.pagination.menu(style="margin-bottom:80px")
+    a.icon.item(href="/keyword/#{keyword}/#{prev}")
+      i.left.chevron.icon
+    a.item(href="/keyword/#{keyword}/1") 1
+    a.item ....
+    a.item.active(href="/keyword/#{keyword}/#{page[0]}") #{page[0]}
+    a.item(href="/keyword/#{keyword}/#{page[1]}") #{page[1]}
+    a.item(href="/keyword/#{keyword}/#{page[2]}") #{page[2]}
+    a.icon.item(href="/keyword/#{keyword}/#{next}")
+      i.right.chevron.icon
+
+   
