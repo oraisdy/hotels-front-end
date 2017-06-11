@@ -30,3 +30,15 @@ block content
             a.ui.right.floated.primary.button(href="/item/#{item.id}")
               |  查看
               i.right.chevron.icon
+  .ui.right.floated.pagination.menu(style="margin-bottom:80px")
+    a.icon.item(href="/list/#{prev}")
+      i.left.chevron.icon
+    a.item(href="/list/1") 1
+    a.item ....
+    a.item.active(href="/list/#{page[0]}") #{page[0]}
+    a.item(href="/list/#{page[1]}") #{page[1]}
+    a.item(href="/list/#{page[2]}") #{page[2]}
+    a.icon.item(href="/list/#{next}")
+      i.right.chevron.icon
+
+   

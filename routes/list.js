@@ -3,12 +3,16 @@ var router = express.Router();
 var dao = require('../dao/HotelDao')
 
 
-router.get('/', function (req, res, next) {
+router.get('/(:page)', function (req, res, next) {
 
+  var page = parseInt(req.params.page) || 1;
   
-  dao.queryAll(function (data) {
+  dao.queryAll(page,function (data) {
     res.render('list', {
       title: '酒店列表',
+      page: [page, page+1, page+2],
+      prev: page==1? 1:page - 1,
+      next: page + 1,
       list: data,
     });
   });
