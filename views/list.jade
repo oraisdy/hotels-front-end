@@ -21,10 +21,9 @@ block content
             //- .ui.star.rating(data-rating=3)
             
             p
-              i.star.icon.yellow
-              i.star.icon.yellow
-              i.star.icon.yellow
-              i.star.icon.yellow
+              - for (var i = 1; i < item.score; ++i)
+                i.star.icon.yellow
+              i.star.half.empty.icon.yellow        
               #{item.score}
           .extra
             .ui.label #{item.type}
