@@ -13,23 +13,25 @@ block content
       .item
         .image
           img(src=item.img)
+        
         .content
           a.header(href="/item/#{item.id}") #{item.name}
           .meta
             span.cinema= item.location
+          
           .description
-            //- .ui.star.rating(data-rating=3)
-            
             p
               - for (var i = 1; i < item.score; ++i)
                 i.star.icon.yellow
               i.star.half.empty.icon.yellow        
               #{item.score}
           .extra
-            .ui.label #{item.type}
+            .ui.label #{item.level}
             a.ui.right.floated.primary.button(href="/item/#{item.id}")
               |  查看
               i.right.chevron.icon
+            .right.floated.content
+              .ui.button ￥#{item.startprice}起
   .ui.right.floated.pagination.menu(style="margin-bottom:80px")
     a.icon.item(href="/list/#{prev}")
       i.left.chevron.icon

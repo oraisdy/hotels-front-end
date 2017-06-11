@@ -2,7 +2,7 @@ var conf = require('../conf/db');
 var mysql = require('mysql');
 
 const sql = {
-	queryByHid: 'select * from meituan_room where hid=?',
+	queryByHid: 'select * from intergrate_room where id=?',
 };
  
 

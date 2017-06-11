@@ -26,7 +26,7 @@ block content
               i.star.icon.yellow
               #{item.score}
           .extra
-            .ui.label #{item.type}
+            .ui.label #{item.level}
             a.ui.right.floated.primary.button(href='http://cq.meituan.com/shop/#{item.id}')
               |  美团
               i.right.chevron.icon
@@ -37,17 +37,23 @@ block content
 
     h3.ui.header
         i.ticket.icon
-        .content 美团房源
+        .content 房间信息
 
     .ui.relaxed.divided.list
         each room in rooms
           .item
             .right.floated.content
-                .ui.button ￥#{room.price}
+                //- .ui.button #{room.datafrom}
+                case room.datafrom[0]
+                  when "qunar": .ui.button ￥#{room.price[0]}（去哪儿）
+                  when "meituan": .ui.button ￥#{room.price[0]}（美团）
+                case room.datafrom[1]
+                  when "qunar": .ui.button ￥#{room.price[1]}（去哪儿）
+                  when "meituan": .ui.button ￥#{room.price[1]}（美团）
             i.large.hotel.middle.aligned.icon.grey
             .content
                 a.header= room.roomtype
-                .description(style="margin:8px 0") #{room.description}
+                .description(style="margin:8px 0") #{room.decription}
                 each service in room.roomservice
                     .ui.label= service
                

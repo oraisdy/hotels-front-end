@@ -2,9 +2,9 @@ var conf = require('../conf/db');
 var mysql = require('mysql');
 
 const sql = {
-	search: 'select * from meituan_hotel where name like ? limit ?,10',
-	queryById: 'select * from meituan_hotel where id=?',
-	queryAll: 'select * from meituan_hotel limit ?,10 '
+	search: 'select * from intergrate_hotel where name like ? limit ?,10',
+	queryById: 'select * from intergrate_hotel where id=?',
+	queryAll: 'select * from intergrate_hotel limit ?,10 '
 };
 
 
